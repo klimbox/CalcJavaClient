@@ -1,0 +1,13 @@
+<!-- Run the JUnit Tests -->
+<target name="junit" depends="compile">
+    <junit printsummary="on" haltonfailure="no">
+    <classpath>
+        <fileset dir="${junit.dir}" includes="junit-4.10.jar"/>
+        <pathelement  location="${build.lib.dir}"/>
+    </classpath>
+        <formatter type="plain" />
+        <batchtest todir="${test.report.dir}">
+            <fileset dir="${test.dir}" />
+        </batchtest> 
+    </junit>
+</target>
